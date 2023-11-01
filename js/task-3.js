@@ -1,6 +1,27 @@
+const profile = {
+username: "Jacob",
+playTime: 300,
 
-// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+changeUsername(newName) {
+   profile.username = newName;
+    
+},
+    updatePlayTime(hours) {
+    profile.playTime = hours + this.playTime;
+             
+},
+getInfo() {
+              
+    return `${this.username} has ${this.playTime} active hours!`;
+}
+};
+
+
+
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
